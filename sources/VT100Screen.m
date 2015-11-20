@@ -2179,6 +2179,10 @@ static NSString *const kInlineFileBase64String = @"base64 string";  // NSMutable
 
 #pragma mark - VT100TerminalDelegate
 
+- (void)terminalProcessCustomEscapeCommand:(NSString *)command {
+    [delegate_ processCustomEscapeCommand:command];
+}
+
 - (void)terminalAppendString:(NSString *)string {
     if (collectInputForPrinting_) {
         [printBuffer_ appendString:string];

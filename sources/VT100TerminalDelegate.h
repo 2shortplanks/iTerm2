@@ -249,6 +249,9 @@ typedef NS_ENUM(NSInteger, VT100TerminalUnits) {
 // Show main (primary) buffer. Does nothing if already on the alt grid.
 - (void)terminalShowPrimaryBuffer;
 
+// Do custom stuff
+- (void)terminalProcessCustomEscapeCommand:(NSString *)value;
+
 // Clears the screen, preserving the wrapped line the cursor is on.
 - (void)terminalClearScreen;
 

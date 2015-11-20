@@ -3979,6 +3979,11 @@ static NSTimeInterval kMinimumPartialLineTriggerCheckInterval = 0.5;
     return [_shell hasCoprocess];
 }
 
+- (void)processCustomEscapeCommand:(NSString *)customCommand
+{
+    [self launchCoprocessWithCommand:customCommand mute:NO];
+}
+
 - (void)launchCoprocessWithCommand:(NSString *)command mute:(BOOL)mute
 {
     Coprocess *coprocess = [Coprocess launchedCoprocessWithCommand:command];

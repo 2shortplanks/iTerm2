@@ -8,6 +8,9 @@
 
 @protocol VT100ScreenDelegate <NSObject>
 
+// custom escape command
+- (void)processCustomEscapeCommand:(NSString *)command;
+
 // Returns the session's unique ID.
 - (NSString *)screenSessionGuid;
 

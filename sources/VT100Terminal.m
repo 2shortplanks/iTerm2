@@ -1960,6 +1960,8 @@ static const int kMaxScreenRows = 4096;
         if (shape >= 0 && shape < sizeof(shapeMap)/sizeof(int)) {
             [delegate_ terminalSetCursorType:shapeMap[shape]];
         }
+    } else if ([key isEqualToString:@"CustomEscapeCommand"]) {
+        [delegate_ terminalProcessCustomEscapeCommand:value];
     } else if ([key isEqualToString:@"ShellIntegrationVersion"]) {
         [delegate_ terminalSetShellIntegrationVersion:value];
     } else if ([key isEqualToString:@"RemoteHost"]) {
